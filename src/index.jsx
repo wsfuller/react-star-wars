@@ -1,27 +1,28 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom';
-import { Provider } from 'react-redux';
+import ApolloClient from 'apollo-boost';
+import { ApolloProvider } from 'react-apollo';
 import { BrowserRouter } from 'react-router-dom';
 import { MuiThemeProvider } from '@material-ui/core/styles';
-import CssBaseline from '@material-ui/core/CssBaseline';
 
 import theme from './theme';
-import store from './store';
 
 import App from './components/Application';
 import * as serviceWorker from './serviceWorker';
 
+const client = new ApolloClient({
+  // uri: 'http://localhost:52723',
+  uri: 'https://api.graphcms.com/simple/v1/swapi ',
+});
+
 ReactDOM.render(
-  <MuiThemeProvider theme={theme}>
-    <Provider store={store}>
+  <ApolloProvider client={client}>
+    <MuiThemeProvider theme={theme}>
       <BrowserRouter>
-        <Fragment>
-          <CssBaseline />
-          <App />
-        </Fragment>
+        <App />
       </BrowserRouter>
-    </Provider>
-  </MuiThemeProvider>,
+    </MuiThemeProvider>
+  </ApolloProvider>,
   document.getElementById('root'),
 );
 

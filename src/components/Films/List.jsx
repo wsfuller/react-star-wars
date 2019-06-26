@@ -53,7 +53,6 @@ const FilmsList = withRouter(({ history, films }) => (
 ));
 
 FilmsList.propTypes = {
-  classes: PropTypes.shape({}).isRequired,
   films: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
 };
 

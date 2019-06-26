@@ -1,3 +1,12 @@
+# React Star Wars
+
+A React, Apollo, GraphQL application fetching data from the [Star Wars API "SWAPI"](https://swapi.co/). Because this project uses
+
+### GraphQL Resources
+
+1. Using in project: https://graphiql.graphcms.com/simple/v1/swapi
+2. Cool wrapper: https://github.com/graphql/swapi-graphql
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
