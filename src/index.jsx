@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 import { MuiThemeProvider } from '@material-ui/core/styles';
+import CssBaseline from '@material-ui/core/CssBaseline';
 
 import theme from './theme';
 import store from './store';
@@ -14,7 +15,10 @@ ReactDOM.render(
   <MuiThemeProvider theme={theme}>
     <Provider store={store}>
       <BrowserRouter>
-        <App />
+        <Fragment>
+          <CssBaseline />
+          <App />
+        </Fragment>
       </BrowserRouter>
     </Provider>
   </MuiThemeProvider>,
