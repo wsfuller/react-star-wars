@@ -36,15 +36,15 @@ const Profile = ({ film, poster }) => (
           <ListItemText primary={`Director: ${film.director}`} />
         </ListItem>
         <ListItem component="li">
-          <ListItemText primary={`Producer: ${film.producer}`} />
+          <ListItemText primary={`Producer: ${film.producers[0]}`} />
         </ListItem>
         <ListItem component="li">
-          <ListItemText primary={`Released: ${film.release_date}`} />
+          <ListItemText primary={`Released: ${film.releaseDate}`} />
         </ListItem>
       </List>
       <Divider />
-      <Typography variant="p" gutterBottom>
-        {film.opening_crawl}
+      <Typography variant="body1" gutterBottom>
+        {film.openingCrawl}
       </Typography>
       <Divider />
     </Grid>
