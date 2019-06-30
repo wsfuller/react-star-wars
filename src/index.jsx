@@ -4,6 +4,7 @@ import ApolloClient from 'apollo-boost';
 import { ApolloProvider } from 'react-apollo';
 import { BrowserRouter } from 'react-router-dom';
 import { MuiThemeProvider } from '@material-ui/core/styles';
+import { ParallaxProvider } from 'react-scroll-parallax';
 
 import theme from './theme';
 
@@ -19,7 +20,9 @@ ReactDOM.render(
   <ApolloProvider client={client}>
     <MuiThemeProvider theme={theme}>
       <BrowserRouter>
-        <App />
+        <ParallaxProvider>
+          <App />
+        </ParallaxProvider>
       </BrowserRouter>
     </MuiThemeProvider>
   </ApolloProvider>,
