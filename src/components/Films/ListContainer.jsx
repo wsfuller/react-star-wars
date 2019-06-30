@@ -9,7 +9,7 @@ import FilmsList from './List';
 import Loader from '../Loader';
 import Error from '../Error';
 
-const FilmsListContainer = ({ filmsOrderBy, numberOfFilms }) => (
+const FilmsListContainer = ({ filmsOrderBy, numberOfFilms, gridOptions }) => (
   <Query query={GET_ALL_FILMS} variables={{ orderBy: filmsOrderBy, first: numberOfFilms }}>
     {({ loading, error, data }) => {
       if (loading) return <Loader />;
@@ -17,7 +17,7 @@ const FilmsListContainer = ({ filmsOrderBy, numberOfFilms }) => (
 
       return (
         <Container>
-          <FilmsList films={data.allFilms} />
+          <FilmsList films={data.allFilms} grid={gridOptions} />
         </Container>
       );
     }}
@@ -27,11 +27,13 @@ const FilmsListContainer = ({ filmsOrderBy, numberOfFilms }) => (
 FilmsListContainer.propTypes = {
   filmsOrderBy: PropTypes.string,
   numberOfFilms: PropTypes.number,
+  gridOptions: PropTypes.shape({}),
 };
 
 FilmsListContainer.defaultProps = {
   filmsOrderBy: 'episodeId_ASC',
   numberOfFilms: 100,
+  gridOptions: {},
 };
 
 export default FilmsListContainer;
