@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { withRouter } from 'react-router-dom';
 
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
@@ -9,19 +8,19 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import Divider from '@material-ui/core/Divider';
 
-import filmImages from './filmImages';
+// import filmImages from './filmImages';
 
-const filmId = url => url.split('/')[5];
+// const filmId = url => url.split('/')[5];
 
-const imgSrc = (title) => {
-  const newTitle = title
-    .toLowerCase()
-    .split(' ')
-    .map(s => s.charAt(0).toUpperCase() + s.substring(1))
-    .join('');
+// const imgSrc = (title) => {
+//   const newTitle = title
+//     .toLowerCase()
+//     .split(' ')
+//     .map(s => s.charAt(0).toUpperCase() + s.substring(1))
+//     .join('');
 
-  return filmImages[newTitle];
-};
+//   return filmImages[newTitle];
+// };
 
 const Profile = ({ film, poster }) => (
   <Grid container style={{ flexGrow: 1 }} spacing={1}>
@@ -37,15 +36,15 @@ const Profile = ({ film, poster }) => (
           <ListItemText primary={`Director: ${film.director}`} />
         </ListItem>
         <ListItem component="li">
-          <ListItemText primary={`Producer: ${film.producer}`} />
+          <ListItemText primary={`Producer: ${film.producers[0]}`} />
         </ListItem>
         <ListItem component="li">
-          <ListItemText primary={`Released: ${film.release_date}`} />
+          <ListItemText primary={`Released: ${film.releaseDate}`} />
         </ListItem>
       </List>
       <Divider />
-      <Typography variant="p" gutterBottom>
-        {film.opening_crawl}
+      <Typography variant="body1" gutterBottom>
+        {film.openingCrawl}
       </Typography>
       <Divider />
     </Grid>
@@ -54,6 +53,7 @@ const Profile = ({ film, poster }) => (
 
 Profile.propTypes = {
   film: PropTypes.shape({}).isRequired,
+  poster: PropTypes.string.isRequired,
 };
 
 export default Profile;

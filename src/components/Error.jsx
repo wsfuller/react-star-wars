@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Grid from '@material-ui/core/Grid';
-import { withStyles, withTheme } from '@material-ui/core/styles';
+// import { withStyles, withTheme } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
-import ErrorIcon from '@material-ui/icons/Close';
+// import ErrorIcon from '@material-ui/icons/Close';
 
 const Error = (props) => {
   // const { classes, error } = props;

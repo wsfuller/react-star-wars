@@ -1,60 +1,27 @@
-import React, { Component } from 'react';
-import _ from 'lodash/collection';
-import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
+import React from 'react';
+import _ from 'lodash';
+import { Query } from 'react-apollo';
 
 import Container from '@material-ui/core/Container';
 
-import { fetchFilms } from '../../store/actions/filmActions';
+import GET_ALL_FILMS from '../../queries/getAllFilms';
 import FilmsList from './List';
 import Loader from '../Loader';
 import Error from '../Error';
 
-class FilmsListContainer extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
+const FilmsListContainer = () => (
+  <Query query={GET_ALL_FILMS}>
+    {({ loading, error, data }) => {
+      if (loading) return <Loader />;
+      if (error) return <Error message={error} />;
 
-  componentDidMount() {
-    const { FETCH_FILMS } = this.props;
-    FETCH_FILMS();
-  }
-
-  render() {
-    const { FILMS } = this.props;
-    let content;
-
-    if (FILMS.fetching) {
-      content = <Loader />;
-    } else if (FILMS.error) {
-      content = <Error />;
-    } else {
-      content = <FilmsList films={_.orderBy(FILMS.films, ['episode_id'], ['asc'])} />;
-    }
-
-    return <Container>{content}</Container>;
-  }
-}
-
-FilmsListContainer.propTypes = {
-  FETCH_FILMS: PropTypes.func.isRequired,
-  FILMS: PropTypes.shape({}).isRequired,
-};
-
-const mapStateToProps = state => ({
-  FILMS: state.films,
-});
-
-const mapDispatchToProps = dispatch => bindActionCreators(
-  {
-    FETCH_FILMS: fetchFilms,
-  },
-  dispatch,
+      return (
+        <Container>
+          <FilmsList films={_.orderBy(data.allFilms, ['episodeId'], ['asc'])} />
+        </Container>
+      );
+    }}
+  </Query>
 );
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps,
-)(FilmsListContainer);
+export default FilmsListContainer;
