@@ -1,7 +1,11 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
+import Container from '@material-ui/core/Container';
+import Grid from '@material-ui/core/Grid';
+import Typography from '@material-ui/core/Typography';
 
+import Section from '../components/Section';
 import FilmsList from '../components/Films/ListContainer';
 import Hero from '../components/Hero';
 import HeroImage from '../assets/images/hero-backgrounds/tie-fighers-and-star-destroyer.jpg';
@@ -31,17 +35,6 @@ const useStyles = makeStyles(theme => ({
   button: {
     margin: theme.spacing(1),
   },
-  wrapper: {
-    width: '95vw',
-    maxWidth: 1400,
-    flexGrow: 1,
-    position: 'relative',
-    margin: '-10vh auto 0',
-    zIndex: 10,
-    [theme.breakpoints.up('lg')]: {
-      width: '100vw',
-    },
-  },
 }));
 
 const Home = () => {
@@ -69,16 +62,29 @@ const Home = () => {
 )}
         className={classes.hero}
       />
-      <FilmsList
-        numberOfFilms={4}
-        filmsOrderBy={`${randomNumber % 2 === 0 ? 'episodeId_ASC' : 'episodeId_DESC'}`}
-        gridOptions={{
-          xs: 12,
-          sm: 6,
-          md: 3,
-          lg: 3,
-        }}
-      />
+      <Section>
+        <Container>
+          <Grid container>
+            <Grid item xs={12}>
+              <Typography variant="h2" gutterBottom>
+                Films
+              </Typography>
+            </Grid>
+            <Grid item xs={12}>
+              <FilmsList
+                numberOfFilms={4}
+                filmsOrderBy={`${randomNumber % 2 === 0 ? 'episodeId_ASC' : 'episodeId_DESC'}`}
+                gridOptions={{
+                  xs: 12,
+                  sm: 6,
+                  md: 3,
+                  lg: 3,
+                }}
+              />
+            </Grid>
+          </Grid>
+        </Container>
+      </Section>
     </main>
   );
 };

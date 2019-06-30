@@ -2,8 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Query } from 'react-apollo';
 
-import Container from '@material-ui/core/Container';
-
 import GET_ALL_FILMS from '../../queries/getAllFilms';
 import FilmsList from './List';
 import Loader from '../Loader';
@@ -15,11 +13,7 @@ const FilmsListContainer = ({ filmsOrderBy, numberOfFilms, gridOptions }) => (
       if (loading) return <Loader />;
       if (error) return <Error message={error} />;
 
-      return (
-        <Container>
-          <FilmsList films={data.allFilms} grid={gridOptions} />
-        </Container>
-      );
+      return <FilmsList films={data.allFilms} grid={gridOptions} />;
     }}
   </Query>
 );
