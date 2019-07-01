@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import ReactDOM from 'react-dom';
 import ApolloClient from 'apollo-boost';
 import { ApolloProvider } from 'react-apollo';
 import { BrowserRouter } from 'react-router-dom';
 import { MuiThemeProvider } from '@material-ui/core/styles';
+import CssBaseline from '@material-ui/core/CssBaseline';
+import { ParallaxProvider } from 'react-scroll-parallax';
 
 import theme from './theme';
 
@@ -19,7 +21,12 @@ ReactDOM.render(
   <ApolloProvider client={client}>
     <MuiThemeProvider theme={theme}>
       <BrowserRouter>
-        <App />
+        <ParallaxProvider>
+          <Fragment>
+            <CssBaseline />
+            <App />
+          </Fragment>
+        </ParallaxProvider>
       </BrowserRouter>
     </MuiThemeProvider>
   </ApolloProvider>,

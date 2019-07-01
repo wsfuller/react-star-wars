@@ -11,7 +11,7 @@ import CardMedia from '@material-ui/core/CardMedia';
 
 import filmImages from './filmImages';
 
-const FilmsList = ({ films }) => {
+const FilmsList = ({ films, grid }) => {
   const imgSrc = (title) => {
     const newTitle = title
       .toLowerCase()
@@ -25,7 +25,7 @@ const FilmsList = ({ films }) => {
   return (
     <Grid container style={{ flexGrow: 1 }} spacing={1}>
       {films.map(film => (
-        <Grid item xs={12} sm={6} md={4} lg={3} key={film.title}>
+        <Grid item xs={grid.xs} sm={grid.sm} md={grid.md} lg={grid.lg} key={film.title}>
           <Card>
             <Link to={`films/${film.id}`}>
               <CardActionArea>
@@ -52,6 +52,16 @@ const FilmsList = ({ films }) => {
 
 FilmsList.propTypes = {
   films: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
+  grid: PropTypes.shape({}),
+};
+
+FilmsList.defaultProps = {
+  grid: {
+    xs: 12,
+    sm: 6,
+    md: 4,
+    lg: 3,
+  },
 };
 
 export default FilmsList;
