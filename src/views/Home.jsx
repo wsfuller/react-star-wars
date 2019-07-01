@@ -14,7 +14,9 @@ import FilmsList from '../components/Films/ListContainer';
 import Hero from '../components/Hero';
 import HeroImage from '../assets/images/hero-backgrounds/tie-fighers-and-star-destroyer.jpg';
 import ReactStarWarsLogo from '../assets/images/logos/react-star-wars.svg';
+import ReactStarWars from '../assets/images/tools/comps/react-star-wars.svg';
 import ModernTools from '../assets/images/tools/comps/react-apollo-graphql.svg';
+import GraphqlSwapi from '../assets/images/tools/comps/graphql-swapi.svg';
 
 const useStyles = makeStyles(theme => ({
   hero: {
@@ -42,6 +44,10 @@ const useStyles = makeStyles(theme => ({
   },
   cardsMedia: {
     height: 145,
+  },
+  cardsIcon: {
+    maxWidth: 20,
+    marginRight: theme.spacing(0.5),
   },
 }));
 
@@ -78,7 +84,46 @@ const Home = () => {
                 About
               </Typography>
             </Grid>
-            <Grid item xs={12} sm={6} md={4}>
+            {/* GRAPHQL SWAPI CARD */}
+            <Grid item xs={12} md={4}>
+              <Card>
+                <CardMedia
+                  className={classes.cardsMedia}
+                  image={GraphqlSwapi}
+                  title="GraphQL Star Wars API"
+                />
+                <CardContent>
+                  <Typography gutterBottom variant="h5" component="h2">
+                    GraphQL SWAPI
+                  </Typography>
+                  <Typography variant="body2" color="textSecondary" component="p">
+                    This project uses the GraphQL port of the Star Wars API by GraphCMS
+                  </Typography>
+                </CardContent>
+                <CardActions>
+                  <Button
+                    size="small"
+                    color="primary"
+                    href="https://swapi.co/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    SWAPI
+                  </Button>
+                  <Button
+                    size="small"
+                    color="primary"
+                    href="https://graphiql.graphcms.com/simple/v1/swapi"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    GraphCMS GraphiQL
+                  </Button>
+                </CardActions>
+              </Card>
+            </Grid>
+            {/* REACT + APOLLO + GRAPHQL CARD */}
+            <Grid item xs={12} md={4}>
               <Card>
                 <CardMedia
                   className={classes.cardsMedia}
@@ -101,40 +146,49 @@ const Home = () => {
                     size="small"
                     color="primary"
                     href="https://www.apollographql.com/docs/react/"
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
                     Apollo Client
                   </Button>
-                  <Button size="small" color="primary" href="https://graphql.org/">
+                  <Button
+                    size="small"
+                    color="primary"
+                    href="https://graphql.org/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     GraphQL
                   </Button>
                 </CardActions>
               </Card>
             </Grid>
-            <Grid item xs={12} sm={6} md={4}>
+            {/* REACT STAR WARS CARD */}
+            <Grid item xs={12} md={4}>
               <Card>
                 <CardMedia
                   className={classes.cardsMedia}
-                  image={ModernTools}
-                  title="React + Apollo + GraphQL"
+                  image={ReactStarWars}
+                  title="React Star Wars"
                 />
                 <CardContent>
                   <Typography gutterBottom variant="h5" component="h2">
-                    Modern Tooling
+                    Codebase
                   </Typography>
                   <Typography variant="body2" color="textSecondary" component="p">
-                    React Star Wars is a modern web application built with React and GraphQL
+                    Interested in checking out the React Star Wars codebase? Click the GitHub link
+                    below
                   </Typography>
                 </CardContent>
                 <CardActions>
-                  <Button size="small" color="primary" href="https://reactjs.org/">
-                    SWAPI
-                  </Button>
                   <Button
                     size="small"
                     color="primary"
-                    href="https://graphiql.graphcms.com/simple/v1/swapi"
+                    href="https://github.com/wsfuller/react-star-wars"
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
-                    SWAPI GraphQL
+                    GitHub
                   </Button>
                 </CardActions>
               </Card>
