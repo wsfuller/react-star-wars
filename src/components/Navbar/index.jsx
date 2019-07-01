@@ -12,6 +12,7 @@ import { withStyles } from '@material-ui/core/styles';
 import Dialog from '@material-ui/core/Dialog';
 
 import ReactStarWarsLogo from '../../assets/images/logos/react-star-wars.svg';
+import MainMenu from './MainMenu';
 import MoreMenu from './MoreMenu';
 import DialogAbout from './DialogAbout';
 import DialogTools from './DialogTools';
@@ -99,7 +100,7 @@ class NavBar extends Component {
             onClick={() => this.toggleDrawer()}
             onKeyDown={() => this.toggleDrawer()}
           >
-            Hi There
+            <MainMenu logo={ReactStarWarsLogo} />
           </div>
         </Drawer>
         <Dialog open={dialog} onClose={this.closeDialog} aria-labelledby="more-dialog-title">
