@@ -12,22 +12,9 @@ import Section from '../components/Section';
 import FilmsList from '../components/Films/ListContainer';
 
 const useStyles = makeStyles(() => ({
-  hero: {
-    width: '100%',
-    height: '100%',
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
   heroContent: {
-    width: '100%',
     height: '100%',
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    justifyContent: 'center',
-    paddingBottom: 100,
+    opacity: '.75',
   },
 }));
 
@@ -42,11 +29,11 @@ const Films = () => {
         backgroundImage={HeroImage}
         altText="Tie Fighters and a Star Destroyer in space"
         content={(
-          <div className={classes.heroContent}>
+          <Grid container alignItems="center" justify="center" className={classes.heroContent}>
             <Typography variant="h1" component="h1" gutterBottom>
               Films
             </Typography>
-          </div>
+          </Grid>
 )}
         className={classes.hero}
       />

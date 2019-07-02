@@ -20,22 +20,8 @@ import ModernTools from '../assets/images/icons/comps/react-apollo-graphql.svg';
 import GraphqlSwapi from '../assets/images/icons/comps/graphql-swapi.svg';
 
 const useStyles = makeStyles(theme => ({
-  hero: {
-    width: '100%',
-    height: '100%',
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
   heroContent: {
-    width: '100%',
     height: '100%',
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    justifyContent: 'center',
-    paddingBottom: 100,
   },
   image: {
     marginBottom: theme.spacing(2),
@@ -62,7 +48,13 @@ const Home = () => {
         backgroundImage={HeroImage}
         altText="Tie Fighters and a Star Destroyer in space"
         content={(
-          <div className={classes.heroContent}>
+          <Grid
+            container
+            direction="column"
+            alignItems="center"
+            justify="center"
+            className={classes.heroContent}
+          >
             <img className={classes.image} src={ReactStarWarsLogo} alt="Logo for React Star Wars" />
             <Button
               variant="outlined"
@@ -73,7 +65,7 @@ const Home = () => {
             >
               Powered by SWAPI GraphQL
             </Button>
-          </div>
+          </Grid>
 )}
         className={classes.hero}
       />
