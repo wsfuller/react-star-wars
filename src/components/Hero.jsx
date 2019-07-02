@@ -3,13 +3,16 @@ import PropTypes from 'prop-types';
 import { makeStyles } from '@material-ui/core/styles';
 import { ParallaxBanner } from 'react-scroll-parallax';
 
-const useStyles = makeStyles(() => ({
+const useStyles = makeStyles(theme => ({
   heroParallaxBanner: {
-    height: '70vh !important',
+    height: '50vh !important',
+    [theme.breakpoints.up('md')]: {
+      height: '70vh !important',
+    },
   },
   hero: {
     width: '100vw',
-    height: '70vh',
+    height: '50vh',
     position: 'relative',
     top: '-25px',
     left: 0,
