@@ -7,9 +7,9 @@ import Routes from '../../views/Routes';
 import Footer from '../Footer';
 
 const useStyles = makeStyles(() => ({
-  applicationWrapper: {
+  contentWrapper: {
     display: 'flex',
-    minHeight: '100vh',
+    minHeight: '95vh',
     flexDirection: 'column',
     justifyContent: 'space-between',
   },
@@ -21,7 +21,7 @@ const App = () => {
   return (
     <Fragment>
       <Navbar />
-      <div className={classes.applicationWrapper}>
+      <div className={classes.contentWrapper}>
         <Routes />
         <Footer />
       </div>
