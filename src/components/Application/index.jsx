@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 
 import { makeStyles } from '@material-ui/core/styles';
 
@@ -19,11 +19,13 @@ const App = () => {
   const classes = useStyles();
 
   return (
-    <div className={classes.applicationWrapper}>
+    <Fragment>
       <Navbar />
-      <Routes />
-      <Footer />
-    </div>
+      <div className={classes.applicationWrapper}>
+        <Routes />
+        <Footer />
+      </div>
+    </Fragment>
   );
 };
 
