@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
+import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import Card from '@material-ui/core/Card';
@@ -11,7 +12,14 @@ import CardMedia from '@material-ui/core/CardMedia';
 
 import filmImages from './filmImages';
 
+const useStyles = makeStyles(() => ({
+  cardLink: {
+    textDecoration: 'none',
+  },
+}));
+
 const FilmsList = ({ films, grid }) => {
+  const classes = useStyles();
   const imgSrc = (title) => {
     const newTitle = title
       .toLowerCase()
@@ -27,8 +35,8 @@ const FilmsList = ({ films, grid }) => {
       {films.map(film => (
         <Grid item xs={grid.xs} sm={grid.sm} md={grid.md} lg={grid.lg} key={film.title}>
           <Card>
-            <Link to={`films/${film.id}`}>
-              <CardActionArea>
+            <Link className={classes.cardLink} to={`films/${film.id}`}>
+              <CardActionArea disableRipple>
                 <CardMedia
                   component="img"
                   alt={`${film.title} movie poster`}
