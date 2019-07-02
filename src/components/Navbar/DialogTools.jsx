@@ -41,9 +41,12 @@ const useStyles = makeStyles(theme => ({
     marginBottom: 15,
     textAlign: 'center',
   },
-  toolIcon: {
+  iconWrapper: {
     width: 75,
     height: 75,
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
     marginBottom: theme.spacing(2),
   },
   subtitle: {
@@ -113,7 +116,9 @@ const DialogTools = () => {
           {icons.map(icon => (
             <Grid item xs={6} sm={4} key={icon.name} className={classes.gridItem}>
               <Paper className={classes.paper} elevation={1}>
-                <Image customClass={classes.toolIcon} src={icon.iconSrc} alt={icon.altText} />
+                <div className={classes.iconWrapper}>
+                  <Image src={icon.iconSrc} alt={icon.altText} />
+                </div>
                 <Typography className={classes.subtitle} variant="subtitle1" gutterBottom>
                   {icon.name}
                 </Typography>
