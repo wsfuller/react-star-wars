@@ -14,9 +14,9 @@ import FilmsList from '../components/Films/ListContainer';
 import Hero from '../components/Hero';
 import HeroImage from '../assets/images/hero-backgrounds/tie-fighers-and-star-destroyer.jpg';
 import ReactStarWarsLogo from '../assets/images/logos/react-star-wars.svg';
-import ReactStarWars from '../assets/images/tools/comps/react-star-wars.svg';
-import ModernTools from '../assets/images/tools/comps/react-apollo-graphql.svg';
-import GraphqlSwapi from '../assets/images/tools/comps/graphql-swapi.svg';
+import ReactStarWars from '../assets/images/icons/comps/react-star-wars.svg';
+import ModernTools from '../assets/images/icons/comps/react-apollo-graphql.svg';
+import GraphqlSwapi from '../assets/images/icons/comps/graphql-swapi.svg';
 
 const useStyles = makeStyles(theme => ({
   hero: {
