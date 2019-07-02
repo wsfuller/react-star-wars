@@ -27,7 +27,6 @@ const Link = ({
 };
 
 Link.propTypes = {
-  classes: PropTypes.shape({}).isRequired,
   href: PropTypes.string.isRequired,
   text: PropTypes.string.isRequired,
   target: PropTypes.string,
