@@ -40,6 +40,13 @@ const theme = createMuiTheme({
     minimal: 4,
     rounded: '50%',
   },
+  overrides: {
+    MuiCardActionArea: {
+      focusHighlight: {
+        'background-color': hoverColor,
+      },
+    },
+  },
 });
 
 export default theme;
