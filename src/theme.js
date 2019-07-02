@@ -35,6 +35,11 @@ const theme = createMuiTheme({
   section: {
     marginBottom: 40,
   },
+  borderRadius: {
+    default: 8,
+    minimal: 4,
+    rounded: '50%',
+  },
 });
 
 export default theme;
