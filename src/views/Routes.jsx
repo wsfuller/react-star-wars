@@ -1,6 +1,7 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 
+import NotFound from './NotFound';
 import Home from './Home';
 import Films from './Films';
 import FilmProfile from './FilmProfile';
@@ -16,6 +17,7 @@ const routes = () => (
     <Route path="/vehicles" exact component={VehiclesList} />
     <Route path="/species" exact component={SpeciesList} />
     <Route path="/planets" exact component={PlanetsList} /> */}
+    <Route component={NotFound} />
   </Switch>
 );
 
