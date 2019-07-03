@@ -8,8 +8,9 @@ const GET_FILM = gql`
       producers
       releaseDate
       openingCrawl
-      species {
+      characters {
         id
+        name
       }
     }
   }
