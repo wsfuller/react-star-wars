@@ -29,15 +29,12 @@ const useStyles = makeStyles(theme => ({
 const CharactersList = ({ characters, grid }) => {
   const classes = useStyles();
   const characterThumbnail = (name) => {
-    console.log('name: ', name);
     const newName = name
       .toLowerCase()
       .replace('-', ' ')
       .split(' ')
       .map(s => s.charAt(0).toUpperCase() + s.substring(1))
       .join('');
-
-    console.log('new name: ', newName);
 
     if (characterImages.thumbnails[newName]) {
       return (
@@ -63,6 +60,7 @@ const CharactersList = ({ characters, grid }) => {
         <Grid item xs={grid.xs} sm={grid.sm} md={grid.md} lg={grid.lg} key={character.id}>
           <Link className={classes.characterLink} to={`characters/${character.id}`}>
             {characterThumbnail(character.name)}
+
             <Typography variant="caption" display="block" gutterBottom>
               {character.name}
             </Typography>
