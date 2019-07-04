@@ -1,16 +1,13 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
+import { Helmet } from 'react-helmet';
 import { withRouter } from 'react-router-dom';
 import { Query } from 'react-apollo';
-
-import Container from '@material-ui/core/Container';
 
 import GET_FILM from '../../queries/getFilm';
 import Profile from './Profile';
 import Loader from '../Loader';
 import Error from '../Error';
-
-import { ThePhantomMenace } from './filmImages';
 
 const FilmProfileContainer = ({
   match: {
@@ -23,9 +20,12 @@ const FilmProfileContainer = ({
       if (error) return <Error message={error} />;
 
       return (
-        <Container>
-          <Profile film={data.Film} poster={ThePhantomMenace} />
-        </Container>
+        <Fragment>
+          <Helmet>
+            <title>{`React Star Wars | ${data.Film.title}`}</title>
+          </Helmet>
+          <Profile film={data.Film} />
+        </Fragment>
       );
     }}
   </Query>

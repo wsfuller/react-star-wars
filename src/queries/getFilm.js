@@ -8,8 +8,25 @@ const GET_FILM = gql`
       producers
       releaseDate
       openingCrawl
+      characters {
+        id
+        name
+      }
+      planets {
+        id
+        name
+      }
       species {
         id
+        name
+      }
+      starships {
+        id
+        name
+      }
+      vehicles {
+        id
+        name
       }
     }
   }
