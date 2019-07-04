@@ -58,7 +58,7 @@ const CharactersList = ({ characters, grid }) => {
     <Grid container spacing={4}>
       {characters.map(character => (
         <Grid item xs={grid.xs} sm={grid.sm} md={grid.md} lg={grid.lg} key={character.id}>
-          <Link className={classes.characterLink} to={`characters/${character.id}`}>
+          <Link className={classes.characterLink} to={`/characters/${character.id}`}>
             {characterThumbnail(character.name)}
 
             <Typography variant="caption" display="block" gutterBottom>
