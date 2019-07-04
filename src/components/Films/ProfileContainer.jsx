@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
+import { Helmet } from 'react-helmet';
 import { withRouter } from 'react-router-dom';
 import { Query } from 'react-apollo';
 
@@ -18,7 +19,14 @@ const FilmProfileContainer = ({
       if (loading) return <Loader />;
       if (error) return <Error message={error} />;
 
-      return <Profile film={data.Film} />;
+      return (
+        <Fragment>
+          <Helmet>
+            <title>{`React Star Wars | ${data.Film.title}`}</title>
+          </Helmet>
+          <Profile film={data.Film} />
+        </Fragment>
+      );
     }}
   </Query>
 );
