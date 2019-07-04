@@ -44,6 +44,13 @@ const imgSrc = (title) => {
   return filmImages[newTitle];
 };
 
+const releaseDate = (date) => {
+  const startSlice = date.indexOf('T');
+  const slicedDate = date.slice(0, startSlice);
+
+  return slicedDate;
+};
+
 const Profile = ({ film }) => {
   const classes = useStyles();
 
@@ -76,7 +83,7 @@ const Profile = ({ film }) => {
                   <ListItemText primary={`Producer: ${film.producers[0]}`} />
                 </ListItem>
                 <ListItem component="li">
-                  <ListItemText primary={`Released: ${film.releaseDate}`} />
+                  <ListItemText primary={`Released: ${releaseDate(film.releaseDate)}`} />
                 </ListItem>
               </List>
             </Grid>
