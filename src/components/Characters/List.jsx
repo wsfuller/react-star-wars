@@ -49,7 +49,7 @@ const CharactersList = ({ characters, grid }) => {
       <Image
         customClass={classes.characterThumb}
         src={characterImages.thumbnails.notFound}
-        alt="Character Not Found"
+        alt={`${name} Thumbnail Not Found`}
       />
     );
   };
