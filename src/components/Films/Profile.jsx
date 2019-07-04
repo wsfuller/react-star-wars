@@ -14,6 +14,7 @@ import Section from '../Section';
 import Image from '../Image';
 import filmImages from './filmImages';
 import CharactersList from '../Characters/List';
+import DropdownList from '../DropdownList';
 
 const useStyles = makeStyles(theme => ({
   image: {
@@ -56,6 +57,7 @@ const Profile = ({ film }) => {
 
   return (
     <main>
+      {console.log('film: ', film)}
       <Section>
         <Container>
           <Grid container spacing={2}>
@@ -86,6 +88,20 @@ const Profile = ({ film }) => {
                   <ListItemText primary={`Released: ${releaseDate(film.releaseDate)}`} />
                 </ListItem>
               </List>
+              <Grid container>
+                <Grid item xs={6} sm={3}>
+                  <DropdownList title="Planets" items={film.planets} displayKey="name" />
+                </Grid>
+                <Grid item xs={6} sm={3}>
+                  <DropdownList title="Species" items={film.species} displayKey="name" />
+                </Grid>
+                <Grid item xs={6} sm={3}>
+                  <DropdownList title="Starships" items={film.starships} displayKey="name" />
+                </Grid>
+                <Grid item xs={6} sm={3}>
+                  <DropdownList title="Vehicles" items={film.vehicles} displayKey="name" />
+                </Grid>
+              </Grid>
             </Grid>
           </Grid>
         </Container>

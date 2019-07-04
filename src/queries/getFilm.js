@@ -12,6 +12,22 @@ const GET_FILM = gql`
         id
         name
       }
+      planets {
+        id
+        name
+      }
+      species {
+        id
+        name
+      }
+      starships {
+        id
+        name
+      }
+      vehicles {
+        id
+        name
+      }
     }
   }
 `;
