@@ -57,7 +57,6 @@ const Profile = ({ film }) => {
 
   return (
     <main>
-      {console.log('film: ', film)}
       <Section>
         <Container>
           <Grid container spacing={2}>
