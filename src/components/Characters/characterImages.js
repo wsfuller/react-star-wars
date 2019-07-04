@@ -1,4 +1,5 @@
 // Full size
+const notFound = require('../../assets/images/characters/not-found.svg');
 // const BeruWhitesunLars = require('../../assets/images/characters/beru-whitesun-lars.jpg');
 // const C3po = require('../../assets/images/characters/c-3po.jpb');
 // const DarthVader = require('../../assets/images/characters/darth-vader.jpg');
@@ -23,6 +24,7 @@ const R2D2Thumbnail = require('../../assets/images/characters/thumbnails/r2-d2.j
 const R5D4Thumbnail = require('../../assets/images/characters/thumbnails/r5-d4.jpg');
 
 module.exports = {
+  notFound,
   // BeruWhitesunLars,
   // C3po,
   // DarthVader,

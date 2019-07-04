@@ -35,7 +35,7 @@ const FilmsList = ({ films, grid }) => {
       {films.map(film => (
         <Grid item xs={grid.xs} sm={grid.sm} md={grid.md} lg={grid.lg} key={film.title}>
           <Card>
-            <Link className={classes.cardLink} to={`films/${film.id}`}>
+            <Link className={classes.cardLink} to={`/films/${film.id}`}>
               <CardActionArea disableRipple>
                 <CardMedia
                   component="img"

@@ -1,7 +1,7 @@
 import React from 'react';
 
-// import FilmProfileContainer from '../components/Films/ProfileContainer';
+import CharacterProfileContainer from '../components/Characters/ProfileContainer';
 
-const CharacterProfile = () => <h1>Character Profile</h1>;
+const CharacterProfile = () => <CharacterProfileContainer />;
 
 export default CharacterProfile;
