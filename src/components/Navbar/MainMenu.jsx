@@ -43,11 +43,11 @@ const MainMenu = ({ logo }) => {
           </ListItemIcon>
           <ListItemText primary="Films" />
         </ListItem>
-        <ListItem button component={Link} to="/people">
+        <ListItem button component={Link} to="/characters">
           <ListItemIcon>
             <PeopleIcon />
           </ListItemIcon>
-          <ListItemText primary="People" />
+          <ListItemText primary="Characters" />
         </ListItem>
       </List>
     </div>
