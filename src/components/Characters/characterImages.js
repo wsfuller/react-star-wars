@@ -1,15 +1,14 @@
 // Full size
 const notFound = require('../../assets/images/characters/not-found.svg');
-// const BeruWhitesunLars = require('../../assets/images/characters/beru-whitesun-lars.jpg');
-// const C3po = require('../../assets/images/characters/c-3po.jpb');
-// const DarthVader = require('../../assets/images/characters/darth-vader.jpg');
-// const LeiaOrgana = require('../../assets/images/characters/leia-organa.jpg');
-// const LukeSkywalker = require('../../assets/images/characters/luke-skywalker.jpg');
-// const ObiWanKenobi = require('../../assets/images/characters/obi-wan-kenobi.jpg');
+const BeruWhitesunLars = require('../../assets/images/characters/beru-whitesun-lars.jpg');
+const C3po = require('../../assets/images/characters/c-3po.jpg');
+const DarthVader = require('../../assets/images/characters/darth-vader.jpg');
+const LeiaOrgana = require('../../assets/images/characters/leia-organa.jpg');
+const LukeSkywalker = require('../../assets/images/characters/luke-skywalker.jpg');
+const ObiWanKenobi = require('../../assets/images/characters/obi-wan-kenobi.jpg');
 const OwenLars = require('../../assets/images/characters/owen-lars.jpg');
-
 const R2D2 = require('../../assets/images/characters/r2-d2.jpg');
-// const R5D4 = require('../../assets/images/characters/r5-d4.jpg');
+const R5D4 = require('../../assets/images/characters/r5-d4.jpg');
 
 // Thumbnails
 const notFoundThumbnail = require('../../assets/images/characters/thumbnails/not-found.svg');
@@ -25,11 +24,15 @@ const R5D4Thumbnail = require('../../assets/images/characters/thumbnails/r5-d4.j
 
 module.exports = {
   notFound,
-  // BeruWhitesunLars,
-  // C3po,
-  // DarthVader,
+  BeruWhitesunLars,
+  C3po,
+  DarthVader,
+  LeiaOrgana,
+  LukeSkywalker,
+  ObiWanKenobi,
   OwenLars,
   R2D2,
+  R5D4,
   thumbnails: {
     notFound: notFoundThumbnail,
     BeruWhitesunLars: BeruWhitesunLarsThumbnail,
