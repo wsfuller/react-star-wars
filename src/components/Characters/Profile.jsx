@@ -86,25 +86,25 @@ const Profile = ({ character }) => {
                   <ListItemIcon>
                     <BirthYearIcon />
                   </ListItemIcon>
-                  <ListItemText primary={character.birthYear} />
+                  <ListItemText primary={character.birthYear ? character.birthYear : 'Unknown'} />
                 </ListItem>
                 <ListItem component="li">
                   <ListItemIcon>
                     <GenderIcon />
                   </ListItemIcon>
-                  <ListItemText primary={character.gender} />
+                  <ListItemText primary={character.gender ? character.gender : 'Unknown'} />
                 </ListItem>
                 <ListItem component="li">
                   <ListItemIcon>
                     <HeightIcon />
                   </ListItemIcon>
-                  <ListItemText primary={character.height} />
+                  <ListItemText primary={character.height ? character.height : 'Unknown'} />
                 </ListItem>
                 <ListItem component="li">
                   <ListItemIcon>
                     <WeightIcon />
                   </ListItemIcon>
-                  <ListItemText primary={character.mass} />
+                  <ListItemText primary={character.mass ? character.mass : 'Unknown'} />
                 </ListItem>
                 <ListItem component="li">
                   <ListItemIcon>
@@ -116,7 +116,9 @@ const Profile = ({ character }) => {
                   <ListItemIcon>
                     <WorldIcon />
                   </ListItemIcon>
-                  <ListItemText primary={character.homeworld.name} />
+                  <ListItemText
+                    primary={character.homeworld.name ? character.homeworld.name : 'Unknown'}
+                  />
                 </ListItem>
               </List>
             </Grid>
