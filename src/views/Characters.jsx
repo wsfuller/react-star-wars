@@ -9,7 +9,6 @@ import Typography from '@material-ui/core/Typography';
 import Hero from '../components/Hero';
 import HeroImage from '../assets/images/hero-backgrounds/skywalker-yoda-vader.png';
 import Section from '../components/Section';
-// import FilmsList from '../components/Films/ListContainer';
 import CharactersList from '../components/Characters/ListContainer';
 
 const useStyles = makeStyles(() => ({
