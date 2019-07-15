@@ -13,7 +13,6 @@ import App from './components/Application';
 import * as serviceWorker from './serviceWorker';
 
 const client = new ApolloClient({
-  // uri: 'http://localhost:52723',
   uri: 'https://api.graphcms.com/simple/v1/swapi ',
 });
 
