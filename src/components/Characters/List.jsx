@@ -10,10 +10,20 @@ import characterImages from './characterImages';
 import Image from '../Image';
 
 const useStyles = makeStyles(theme => ({
+  gridItem: {
+    display: 'flex',
+    justifyContent: 'center',
+  },
   characterLink: {
+    display: 'inline-flex',
+    flexDirection: 'column',
     color: '#ffffff',
     textAlign: 'center',
     textDecoration: 'none',
+    transition: 'background-color .5s ease-in-out',
+    '&:hover': {
+      backgroundColor: theme.palette.primary.main,
+    },
   },
   characterAvatar: {
     width: '100%',
@@ -57,7 +67,15 @@ const CharactersList = ({ characters, grid }) => {
   return (
     <Grid container spacing={4}>
       {characters.map(character => (
-        <Grid item xs={grid.xs} sm={grid.sm} md={grid.md} lg={grid.lg} key={character.id}>
+        <Grid
+          className={classes.gridItem}
+          item
+          xs={grid.xs}
+          sm={grid.sm}
+          md={grid.md}
+          lg={grid.lg}
+          key={character.id}
+        >
           <Link className={classes.characterLink} to={`/characters/${character.id}`}>
             {characterThumbnail(character.name)}
 
