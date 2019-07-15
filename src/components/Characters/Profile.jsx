@@ -80,7 +80,9 @@ const Profile = ({ character }) => {
                   <ListItemIcon>
                     <SpeciesIcon />
                   </ListItemIcon>
-                  <ListItemText primary={character.species[0].name} />
+                  <ListItemText
+                    primary={character.species.length >= 1 ? character.species[0].name : 'Unknown'}
+                  />
                 </ListItem>
                 <ListItem component="li">
                   <ListItemIcon>
@@ -117,7 +119,7 @@ const Profile = ({ character }) => {
                     <WorldIcon />
                   </ListItemIcon>
                   <ListItemText
-                    primary={character.homeworld.name ? character.homeworld.name : 'Unknown'}
+                    primary={character.homeworld ? character.homeworld.name : 'Unknown'}
                   />
                 </ListItem>
               </List>
@@ -134,7 +136,15 @@ const Profile = ({ character }) => {
               </Typography>
             </Grid>
           </Grid>
-          <FilmsList films={character.films} />
+          <FilmsList
+            films={character.films}
+            gridOptions={{
+              xs: 12,
+              sm: 6,
+              md: 3,
+              lg: 3,
+            }}
+          />
         </Container>
       </Section>
     </main>
