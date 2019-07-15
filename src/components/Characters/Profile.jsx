@@ -80,7 +80,9 @@ const Profile = ({ character }) => {
                   <ListItemIcon>
                     <SpeciesIcon />
                   </ListItemIcon>
-                  <ListItemText primary={character.species[0].name} />
+                  <ListItemText
+                    primary={character.species.length >= 1 ? character.species[0].name : 'Unknown'}
+                  />
                 </ListItem>
                 <ListItem component="li">
                   <ListItemIcon>
