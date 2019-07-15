@@ -24,7 +24,6 @@ const CharacterProfileContainer = ({
           <Helmet>
             <title>{`React Star Wars | ${data.Person.name}`}</title>
           </Helmet>
-          {console.log('data.person', data.Person)}
           <Profile character={data.Person} />
         </Fragment>
       );
