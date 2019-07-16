@@ -10,6 +10,7 @@ import { ParallaxProvider } from 'react-scroll-parallax';
 import theme from './theme';
 
 import App from './components/Application';
+import GoogleAnalytics from './components/Providers/GoogleAnalytics';
 import ScrollToTop from './components/Providers/ScrollToTop';
 import * as serviceWorker from './serviceWorker';
 
@@ -21,14 +22,16 @@ ReactDOM.render(
   <ApolloProvider client={client}>
     <MuiThemeProvider theme={theme}>
       <BrowserRouter>
-        <ScrollToTop>
-          <ParallaxProvider>
-            <Fragment>
-              <CssBaseline />
-              <App />
-            </Fragment>
-          </ParallaxProvider>
-        </ScrollToTop>
+        <GoogleAnalytics trackingId="UA-33461307-8">
+          <ScrollToTop>
+            <ParallaxProvider>
+              <Fragment>
+                <CssBaseline />
+                <App />
+              </Fragment>
+            </ParallaxProvider>
+          </ScrollToTop>
+        </GoogleAnalytics>
       </BrowserRouter>
     </MuiThemeProvider>
   </ApolloProvider>,
