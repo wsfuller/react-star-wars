@@ -5,6 +5,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import ClickAwayListener from '@material-ui/core/ClickAwayListener';
 import Button from '@material-ui/core/Button';
 import Paper from '@material-ui/core/Paper';
+import ArrowDownIcon from '@material-ui/icons/KeyboardArrowDown';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -12,11 +13,20 @@ const useStyles = makeStyles(theme => ({
     display: 'flex',
     justifyContent: 'center',
   },
+  button: {
+    [theme.breakpoints.down('sm')]: {
+      marginBottom: theme.spacing(2),
+    },
+  },
+  rightIcon: {
+    marginLeft: theme.spacing(1),
+  },
   paper: {
     position: 'absolute',
     top: 36,
     right: 0,
     left: 0,
+    zIndex: 1,
     padding: theme.spacing(1),
   },
   listItem: {
@@ -43,7 +53,15 @@ const DropdownList = ({ title, items, displayKey }) => {
     <div className={classes.root}>
       <ClickAwayListener onClickAway={handleClickAway}>
         <div>
-          <Button onClick={handleClick}>{title}</Button>
+          <Button
+            className={classes.button}
+            variant="outlined"
+            color="primary"
+            onClick={handleClick}
+          >
+            {title}
+            <ArrowDownIcon className={classes.rightIcon} />
+          </Button>
           {open ? (
             <Paper className={classes.paper}>
               {items.map(item => (
