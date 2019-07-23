@@ -42,6 +42,53 @@ const useStyles = makeStyles(theme => ({
 const Home = () => {
   const classes = useStyles();
   const randomNumber = Math.floor(Math.random() * 10);
+  const aboutCards = [
+    {
+      image: GraphqlSwapi,
+      imageTitle: 'GraphQL Star Wars API',
+      contentTitle: 'GraphQL SWAPI',
+      contentText: 'This project uses the GraphQL port of the Star Wars API by GraphCMS',
+      actions: [
+        {
+          actionLink: 'https://swapi.co/',
+          actionText: 'SWAPI',
+        },
+        {
+          actionLink: 'https://graphiql.graphcms.com/simple/v1/swapi',
+          actionText: 'GraphCMS GraphiQL',
+        },
+      ],
+    },
+    {
+      image: ModernTools,
+      imageTitle: 'React + Apollo + GraphQL',
+      contentTitle: 'Modern Tooling',
+      contentText: 'React Star Wars is a modern web application built with React and GraphQL',
+      actions: [
+        {
+          actionLink: 'https://www.apollographql.com/docs/react/',
+          actionText: 'Apollo Client',
+        },
+        {
+          actionLink: 'https://graphql.org/',
+          actionText: 'GraphQL',
+        },
+      ],
+    },
+    {
+      image: ReactStarWars,
+      imageTitle: 'React Star Wars',
+      contentTitle: 'Codebase',
+      contentText:
+        'Interested in checking out the React Star Wars codebase? Click the GitHub link below',
+      actions: [
+        {
+          actionLink: 'https://github.com/wsfuller/react-star-wars',
+          actionText: 'GitHub Repo',
+        },
+      ],
+    },
+  ];
 
   return (
     <Fragment>
@@ -86,115 +133,39 @@ const Home = () => {
                   About
                 </Typography>
               </Grid>
-              {/* GRAPHQL SWAPI CARD */}
-              <Grid item xs={12} md={4}>
-                <Card>
-                  <CardMedia
-                    className={classes.cardsMedia}
-                    image={GraphqlSwapi}
-                    title="GraphQL Star Wars API"
-                  />
-                  <CardContent>
-                    <Typography gutterBottom variant="h5" component="h2">
-                      GraphQL SWAPI
-                    </Typography>
-                    <Typography variant="body2" color="textSecondary" component="p">
-                      This project uses the GraphQL port of the Star Wars API by GraphCMS
-                    </Typography>
-                  </CardContent>
-                  <CardActions>
-                    <Button
-                      size="small"
-                      color="primary"
-                      href="https://swapi.co/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      SWAPI
-                    </Button>
-                    <Button
-                      size="small"
-                      color="primary"
-                      href="https://graphiql.graphcms.com/simple/v1/swapi"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      GraphCMS GraphiQL
-                    </Button>
-                  </CardActions>
-                </Card>
-              </Grid>
-              {/* REACT + APOLLO + GRAPHQL CARD */}
-              <Grid item xs={12} md={4}>
-                <Card>
-                  <CardMedia
-                    className={classes.cardsMedia}
-                    image={ModernTools}
-                    title="React + Apollo + GraphQL"
-                  />
-                  <CardContent>
-                    <Typography gutterBottom variant="h5" component="h2">
-                      Modern Tooling
-                    </Typography>
-                    <Typography variant="body2" color="textSecondary" component="p">
-                      React Star Wars is a modern web application built with React and GraphQL
-                    </Typography>
-                  </CardContent>
-                  <CardActions>
-                    <Button size="small" color="primary" href="https://reactjs.org/">
-                      React
-                    </Button>
-                    <Button
-                      size="small"
-                      color="primary"
-                      href="https://www.apollographql.com/docs/react/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      Apollo Client
-                    </Button>
-                    <Button
-                      size="small"
-                      color="primary"
-                      href="https://graphql.org/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      GraphQL
-                    </Button>
-                  </CardActions>
-                </Card>
-              </Grid>
-              {/* REACT STAR WARS CARD */}
-              <Grid item xs={12} md={4}>
-                <Card>
-                  <CardMedia
-                    className={classes.cardsMedia}
-                    image={ReactStarWars}
-                    title="React Star Wars"
-                  />
-                  <CardContent>
-                    <Typography gutterBottom variant="h5" component="h2">
-                      Codebase
-                    </Typography>
-                    <Typography variant="body2" color="textSecondary" component="p">
-                      Interested in checking out the React Star Wars codebase? Click the GitHub link
-                      below
-                    </Typography>
-                  </CardContent>
-                  <CardActions>
-                    <Button
-                      size="small"
-                      color="primary"
-                      href="https://github.com/wsfuller/react-star-wars"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      GitHub
-                    </Button>
-                  </CardActions>
-                </Card>
-              </Grid>
+              {aboutCards.map(card => (
+                <Grid item xs={12} md={4} key={card.contentTitle}>
+                  <Card style={{ maxWidth: 400, margin: 'auto' }}>
+                    <CardMedia
+                      className={classes.cardsMedia}
+                      image={card.image}
+                      title={card.imageTitle}
+                    />
+                    <CardContent>
+                      <Typography gutterBottom variant="h5" component="h2">
+                        {card.contentTitle}
+                      </Typography>
+                      <Typography variant="body2" color="textSecondary" component="p">
+                        {card.contentText}
+                      </Typography>
+                    </CardContent>
+                    <CardActions>
+                      {card.actions.map(action => (
+                        <Button
+                          key={action.actionText}
+                          size="small"
+                          color="primary"
+                          href={action.actionLink}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          {action.actionText}
+                        </Button>
+                      ))}
+                    </CardActions>
+                  </Card>
+                </Grid>
+              ))}
             </Grid>
           </Container>
         </Section>
