@@ -29,9 +29,11 @@ const DialogAbout = () => {
             href="https://graphiql.graphcms.com/simple/v1/swapi"
             text="GraphCMS SWAPI GraphQL Port."
           />
+          GraphQL was ultimately chosen over the traditional RESTful service because of the ability
+          to build out profiles in a single HTTP request.
         </DialogContentText>
         <DialogContentText className={classes.textSection}>
-          Along with using GraphQL this project also uses the latest version of
+          On top of the other tools mentioned, the UI was built using
           <Link
             href="https://material-ui.com/"
             target="_blank"
@@ -43,10 +45,9 @@ const DialogAbout = () => {
             href="http://cssinjs.org/"
             target="_blank"
             rel="noopener noreferrer"
-            text="JavaScriptStyles (JSS)."
+            text="JavaScriptStyles (JSS)"
           />
-          To try to build toward a fully JavaScript driven application and modern techniques of
-          component based applications.
+          for a completely JavaScript driven application.
         </DialogContentText>
         <DialogContentText>
           So take a look around and maybe learn a little more about Star Wars, which I certainly
