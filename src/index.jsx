@@ -7,7 +7,7 @@ import { MuiThemeProvider } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import { ParallaxProvider } from 'react-scroll-parallax';
 
-import theme from './theme';
+import { theme } from './theme';
 
 import App from './components/Application';
 import GoogleAnalytics from './components/Providers/GoogleAnalytics';

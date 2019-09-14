@@ -44,6 +44,7 @@ const appTheme = {
     minimal: 4,
     rounded: '50%',
   },
+
   overrides: {
     MuiTypography: {
       h1: {
@@ -79,6 +80,10 @@ const appTheme = {
   },
 };
 
-const theme = createMuiTheme(appTheme);
+export const theme = createMuiTheme(appTheme);
 
-export default theme;
+export const responsiveImage = {
+  width: '100%',
+  height: 'auto',
+  display: 'block',
+};

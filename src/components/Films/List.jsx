@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import { CloudinaryContext, Image } from 'cloudinary-react';
 
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
@@ -8,9 +9,7 @@ import Typography from '@material-ui/core/Typography';
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import CardContent from '@material-ui/core/CardContent';
-import CardMedia from '@material-ui/core/CardMedia';
-
-import filmImages from './filmImages';
+import { responsiveImage } from '../../theme';
 
 const useStyles = makeStyles(() => ({
   cardLink: {
@@ -21,13 +20,12 @@ const useStyles = makeStyles(() => ({
 const FilmsList = ({ films, grid }) => {
   const classes = useStyles();
   const imgSrc = (title) => {
-    const newTitle = title
+    const cloudinaryTitle = title
       .toLowerCase()
       .split(' ')
-      .map(s => s.charAt(0).toUpperCase() + s.substring(1))
-      .join('');
+      .join('-');
 
-    return filmImages[newTitle];
+    return cloudinaryTitle;
   };
 
   return (
@@ -37,13 +35,13 @@ const FilmsList = ({ films, grid }) => {
           <Card>
             <Link className={classes.cardLink} to={`/films/${film.id}`}>
               <CardActionArea disableRipple>
-                <CardMedia
-                  component="img"
-                  alt={`${film.title} movie poster`}
-                  height="420"
-                  image={imgSrc(film.title)}
-                  title={film.title}
-                />
+                <CloudinaryContext cloudName="wsfuller" secure="true" format="png">
+                  <Image
+                    style={responsiveImage}
+                    publicId={`react-star-wars/v1/films/${imgSrc(film.title)}`}
+                    alt={`${film.title} movie poster`}
+                  />
+                </CloudinaryContext>
                 <CardContent>
                   <Typography gutterBottom variant="h6" component="h2" style={{ color: '#fff' }}>
                     {film.title}
