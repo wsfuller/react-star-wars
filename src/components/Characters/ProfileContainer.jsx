@@ -11,10 +11,10 @@ import Error from '../Error';
 
 const CharacterProfileContainer = ({
   match: {
-    params: { id },
-  },
+    params: { id }
+  }
 }) => (
-  <Query query={GET_CHARACTER} variables={{ id: `${id}` }}>
+  <Query query={GET_CHARACTER} variables={{ where: { id: `${id}` } }}>
     {({ loading, error, data }) => {
       if (loading) return <Loader />;
       if (error) return <Error message={error} />;
@@ -22,9 +22,9 @@ const CharacterProfileContainer = ({
       return (
         <Fragment>
           <Helmet>
-            <title>{`React Star Wars | ${data.Person.name}`}</title>
+            <title>{`React Star Wars | ${data.person.name}`}</title>
           </Helmet>
-          <Profile character={data.Person} />
+          <Profile character={data.person} />
         </Fragment>
       );
     }}
@@ -32,7 +32,11 @@ const CharacterProfileContainer = ({
 );
 
 CharacterProfileContainer.propTypes = {
-  match: PropTypes.shape({}).isRequired,
+  match: PropTypes.shape({
+    params: PropTypes.shape({
+      id: PropTypes.string.isRequired
+    })
+  }).isRequired
 };
 
 export default withRouter(CharacterProfileContainer);
