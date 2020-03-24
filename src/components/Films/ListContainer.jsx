@@ -13,7 +13,7 @@ const FilmsListContainer = ({ filmsOrderBy, numberOfFilms, gridOptions }) => (
       if (loading) return <Loader />;
       if (error) return <Error message={error} />;
 
-      return <FilmsList films={data.allFilms} grid={gridOptions} />;
+      return <FilmsList films={data.films} grid={gridOptions} />;
     }}
   </Query>
 );
@@ -21,13 +21,13 @@ const FilmsListContainer = ({ filmsOrderBy, numberOfFilms, gridOptions }) => (
 FilmsListContainer.propTypes = {
   filmsOrderBy: PropTypes.string,
   numberOfFilms: PropTypes.number,
-  gridOptions: PropTypes.shape({}),
+  gridOptions: PropTypes.shape({})
 };
 
 FilmsListContainer.defaultProps = {
   filmsOrderBy: 'episodeId_ASC',
   numberOfFilms: 100,
-  gridOptions: {},
+  gridOptions: {}
 };
 
 export default FilmsListContainer;

@@ -1,8 +1,8 @@
 import { gql } from 'apollo-boost';
 
 const GET_CHARACTER = gql`
-  query Person($id: ID!) {
-    Person(id: $id) {
+  query Person($where: PersonWhereUniqueInput!) {
+    person(where: $where) {
       id
       name
       gender

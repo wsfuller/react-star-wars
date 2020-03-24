@@ -15,7 +15,7 @@ import ScrollToTop from './components/Providers/ScrollToTop';
 import * as serviceWorker from './serviceWorker';
 
 const client = new ApolloClient({
-  uri: 'https://api.graphcms.com/simple/v1/swapi ',
+  uri: 'https://api-euwest.graphcms.com/v1/ck5wca13qc9ux01fgaidt12m4/master'
 });
 
 ReactDOM.render(
@@ -35,7 +35,7 @@ ReactDOM.render(
       </BrowserRouter>
     </MuiThemeProvider>
   </ApolloProvider>,
-  document.getElementById('root'),
+  document.getElementById('root')
 );
 
 // If you want your app to work offline and load faster, you can change

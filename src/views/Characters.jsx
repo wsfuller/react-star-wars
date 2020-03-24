@@ -14,8 +14,8 @@ import CharactersList from '../components/Characters/ListContainer';
 const useStyles = makeStyles(() => ({
   heroContent: {
     height: '100%',
-    opacity: '.75',
-  },
+    opacity: '.75'
+  }
 }));
 
 const Characters = () => {
@@ -28,13 +28,14 @@ const Characters = () => {
       <Hero
         backgroundImage={HeroImage}
         altText="Luke Skywalker, Yoda, and Darth Vader facing off opposing forcers"
-        content={(
+        content={
+          // eslint-disable-next-line react/jsx-wrap-multilines
           <Grid container alignItems="center" justify="center" className={classes.heroContent}>
             <Typography variant="h1" component="h1" gutterBottom>
               Characters
             </Typography>
           </Grid>
-)}
+        }
         className={classes.hero}
       />
       <Section>
@@ -52,7 +53,7 @@ const Characters = () => {
                   xs: 6,
                   sm: 4,
                   md: 3,
-                  lg: 2,
+                  lg: 2
                 }}
               />
             </Grid>

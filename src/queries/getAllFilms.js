@@ -1,8 +1,8 @@
 import { gql } from 'apollo-boost';
 
 const GET_ALL_FILMS = gql`
-  query allFilms($orderBy: FilmOrderBy, $first: Int!) {
-    allFilms(orderBy: $orderBy, first: $first) {
+  query films($orderBy: FilmOrderByInput!, $first: Int!) {
+    films(orderBy: $orderBy, first: $first) {
       id
       title
       episodeId

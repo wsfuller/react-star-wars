@@ -1,8 +1,8 @@
 import { gql } from 'apollo-boost';
 
 const GET_ALL_CHARACTERS = gql`
-  query allPersons($orderBy: PersonOrderBy) {
-    allPersons(orderBy: $orderBy) {
+  query allPersons($orderBy: PersonOrderByInput) {
+    persons(orderBy: $orderBy) {
       id
       name
     }
