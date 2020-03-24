@@ -22,21 +22,21 @@ import GraphqlSwapi from '../assets/images/icons/comps/graphql-swapi.svg';
 
 const useStyles = makeStyles(theme => ({
   heroContent: {
-    height: '100%',
+    height: '100%'
   },
   image: {
-    marginBottom: theme.spacing(2),
+    marginBottom: theme.spacing(2)
   },
   button: {
-    margin: theme.spacing(1),
+    margin: theme.spacing(1)
   },
   cardsMedia: {
-    height: 145,
+    height: 145
   },
   cardsIcon: {
     maxWidth: 20,
-    marginRight: theme.spacing(0.5),
-  },
+    marginRight: theme.spacing(0.5)
+  }
 }));
 
 const Home = () => {
@@ -51,13 +51,13 @@ const Home = () => {
       actions: [
         {
           actionLink: 'https://swapi.co/',
-          actionText: 'SWAPI',
+          actionText: 'SWAPI'
         },
         {
           actionLink: 'https://graphiql.graphcms.com/simple/v1/swapi',
-          actionText: 'GraphCMS GraphiQL',
-        },
-      ],
+          actionText: 'GraphCMS GraphiQL'
+        }
+      ]
     },
     {
       image: ModernTools,
@@ -67,13 +67,13 @@ const Home = () => {
       actions: [
         {
           actionLink: 'https://www.apollographql.com/docs/react/',
-          actionText: 'Apollo Client',
+          actionText: 'Apollo Client'
         },
         {
           actionLink: 'https://graphql.org/',
-          actionText: 'GraphQL',
-        },
-      ],
+          actionText: 'GraphQL'
+        }
+      ]
     },
     {
       image: ReactStarWars,
@@ -84,10 +84,10 @@ const Home = () => {
       actions: [
         {
           actionLink: 'https://github.com/wsfuller/react-star-wars',
-          actionText: 'GitHub Repo',
-        },
-      ],
-    },
+          actionText: 'GitHub Repo'
+        }
+      ]
+    }
   ];
 
   return (
@@ -99,7 +99,8 @@ const Home = () => {
         <Hero
           backgroundImage={HeroImage}
           altText="Tie Fighters and a Star Destroyer in space"
-          content={(
+          content={
+            // eslint-disable-next-line react/jsx-wrap-multilines
             <Grid
               container
               direction="column"
@@ -122,7 +123,7 @@ const Home = () => {
                 Powered by SWAPI GraphQL
               </Button>
             </Grid>
-)}
+          }
           className={classes.hero}
         />
         <Section>
@@ -185,7 +186,7 @@ const Home = () => {
                     xs: 12,
                     sm: 6,
                     md: 3,
-                    lg: 3,
+                    lg: 3
                   }}
                 />
               </Grid>
