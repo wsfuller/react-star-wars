@@ -11,10 +11,10 @@ import Error from '../Error';
 
 const FilmProfileContainer = ({
   match: {
-    params: { id },
-  },
+    params: { id }
+  }
 }) => (
-  <Query query={GET_FILM} variables={{ id: `${id}` }}>
+  <Query query={GET_FILM} variables={{ where: { id: `${id}` } }}>
     {({ loading, error, data }) => {
       if (loading) return <Loader />;
       if (error) return <Error message={error} />;
@@ -22,9 +22,9 @@ const FilmProfileContainer = ({
       return (
         <Fragment>
           <Helmet>
-            <title>{`React Star Wars | ${data.Film.title}`}</title>
+            <title>{`React Star Wars | ${data.film.title}`}</title>
           </Helmet>
-          <Profile film={data.Film} />
+          <Profile film={data.film} />
         </Fragment>
       );
     }}
@@ -32,7 +32,11 @@ const FilmProfileContainer = ({
 );
 
 FilmProfileContainer.propTypes = {
-  match: PropTypes.shape({}).isRequired,
+  match: PropTypes.shape({
+    params: PropTypes.shape({
+      id: PropTypes.string.isRequired
+    })
+  }).isRequired
 };
 
 export default withRouter(FilmProfileContainer);
