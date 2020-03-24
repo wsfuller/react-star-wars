@@ -61,10 +61,10 @@ const FilmsList = ({ films, grid }) => {
 FilmsList.propTypes = {
   films: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
   grid: PropTypes.shape({
-    xs: PropTypes.string,
-    sm: PropTypes.string,
-    md: PropTypes.string,
-    lg: PropTypes.string
+    xs: PropTypes.number,
+    sm: PropTypes.number,
+    md: PropTypes.number,
+    lg: PropTypes.number
   })
 };
 
