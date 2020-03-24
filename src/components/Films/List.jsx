@@ -14,13 +14,13 @@ import filmImages from './filmImages';
 
 const useStyles = makeStyles(() => ({
   cardLink: {
-    textDecoration: 'none',
-  },
+    textDecoration: 'none'
+  }
 }));
 
 const FilmsList = ({ films, grid }) => {
   const classes = useStyles();
-  const imgSrc = (title) => {
+  const imgSrc = title => {
     const newTitle = title
       .toLowerCase()
       .split(' ')
@@ -60,7 +60,12 @@ const FilmsList = ({ films, grid }) => {
 
 FilmsList.propTypes = {
   films: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
-  grid: PropTypes.shape({}),
+  grid: PropTypes.shape({
+    xs: PropTypes.string,
+    sm: PropTypes.string,
+    md: PropTypes.string,
+    lg: PropTypes.string
+  })
 };
 
 FilmsList.defaultProps = {
@@ -68,8 +73,8 @@ FilmsList.defaultProps = {
     xs: 12,
     sm: 6,
     md: 4,
-    lg: 3,
-  },
+    lg: 3
+  }
 };
 
 export default FilmsList;
