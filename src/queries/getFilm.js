@@ -1,8 +1,8 @@
 import { gql } from 'apollo-boost';
 
 const GET_FILM = gql`
-  query Film($id: ID!) {
-    Film(id: $id) {
+  query Film($where: FilmWhereUniqueInput!) {
+    film(where: $where) {
       title
       director
       producers
