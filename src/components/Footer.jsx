@@ -14,8 +14,8 @@ const useStyles = makeStyles(theme => ({
     padding: `${theme.spacing(8)}px ${theme.spacing(2)}px`,
     background: theme.palette.grey[900],
     [theme.breakpoints.up('sm')]: {
-      flexDirection: 'row',
-    },
+      flexDirection: 'row'
+    }
   },
   content: {
     width: '100%',
@@ -27,8 +27,8 @@ const useStyles = makeStyles(theme => ({
     margin: `0 auto ${theme.spacing(2)}px`,
     [theme.breakpoints.up('sm')]: {
       flexDirection: 'row',
-      marginBottom: 0,
-    },
+      marginBottom: 0
+    }
   },
   wsfBranding: {
     width: 'auto',
@@ -42,12 +42,12 @@ const useStyles = makeStyles(theme => ({
     color: '#ffffff',
     fontFamily: theme.typography.secondaryFontFamily,
     fontSize: 12,
-    textDecoration: 'none',
+    textDecoration: 'none'
   },
   logo: {
     width: 28,
     height: 28,
-    marginRight: 5,
+    marginRight: 5
   },
   copyright: {
     textAlign: 'center',
@@ -55,9 +55,9 @@ const useStyles = makeStyles(theme => ({
       position: 'absolute',
       top: '45%',
       left: 0,
-      right: 0,
-    },
-  },
+      right: 0
+    }
+  }
 }));
 
 const Footer = () => {
@@ -67,7 +67,7 @@ const Footer = () => {
     <footer className={classes.footer}>
       <div className={classes.content}>
         <a
-          href="https://williamsfuller.com"
+          href="https://wsfuller.dev"
           className={classes.wsfBranding}
           // eslint-disable-next-line react/jsx-no-target-blank
           target="_blank"
