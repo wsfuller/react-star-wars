@@ -5,7 +5,7 @@ import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 // import ErrorIcon from '@material-ui/icons/Close';
 
-const Error = (props) => {
+const Error = props => {
   // const { classes, error } = props;
   const { error } = props;
 
@@ -24,7 +24,7 @@ const Error = (props) => {
             There was an error
           </Typography>
           <Typography variant="caption" gutterBottom>
-            {error.errorMessage}
+            {error.message}
           </Typography>
         </Grid>
       </Grid>
@@ -33,16 +33,17 @@ const Error = (props) => {
 };
 
 Error.propTypes = {
-  classes: PropTypes.shape({}).isRequired,
+  classes: PropTypes.shape({}),
   error: PropTypes.shape({
-    message: PropTypes.string,
-  }),
+    message: PropTypes.string
+  })
 };
 
 Error.defaultProps = {
+  classes: {},
   error: {
-    message: 'We are currently trying to resolve the issue',
-  },
+    message: 'We are currently trying to resolve the issue'
+  }
 };
 
 // const styles = theme => ({
